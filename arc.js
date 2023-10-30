@@ -222,7 +222,7 @@ function gameLogicStep() {
         arena.paddleArray[i].logicUpdate();
     }
 
-    //arena.cameraRotate += (arena.paddleArray[0].angle - arena.cameraRotate) * 0.05;
+    arena.cameraRotate += (arena.paddleArray[0].angle - arena.cameraRotate) * 0.05;
     arena.containerDocElement.style.transform = `rotateY(${arena.cameraRotate * -0.2}deg)`;
 
     arena.goalHandler.logicUpdate();
