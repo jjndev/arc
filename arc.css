@@ -1,0 +1,338 @@
+@font-face {
+    font-family: 'Audiowide';
+    src: url(./Audiowide-Regular.ttf);
+  }
+
+#debug-log, #debug-log2 {
+    display: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgb(153, 179, 214);
+    background-image: url("./diagmonds-light.png");
+    animation: backgroundScroll 12s linear 2s infinite;
+    font-family: Audiowide, Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+h1 {
+    font-size: 8vmin;
+}
+
+p {
+    font-size: 4vmin;
+}
+
+@keyframes backgroundScroll {
+    from {background-position: 0px 0px;}
+    to {background-position: 0px 142px; }/*142px;}*/
+  }
+
+button {
+    font-family: Audiowide, Verdana, Geneva, Tahoma, sans-serif;
+    border: none;
+    padding: 1%;
+    font-size: 5vmin;
+    border-radius: 10% 10% 10% 10%;
+    background-color: slategray;
+}
+
+button:hover {
+    font-family: Audiowide, Verdana, Geneva, Tahoma, sans-serif;
+    border: none;
+    padding: 1%;
+    font-size: 5vmin;
+    border-radius: 10% 10% 10% 10%;
+    background-color: slategray;
+    cursor: pointer;
+}
+
+.splash-screen {
+    position: absolute;
+    width: 80%;
+    height: 60%;
+    left: 10%;
+    top: 10%;
+    margin-top: 10%;
+    /*max-width: 90vmin;*/
+    /*max-height: 90vmin;*/
+    background-color: rgba(198, 198, 218, 0.8);
+    border-radius: 10vmin;
+    z-index: 1;
+    transition: opacity 0.5s;
+    overflow-y: auto;
+}
+
+#splash-howtoplay, #splash-win, #splash-lose {
+    display: none;
+    opacity: 0;
+}
+
+#arena-outer-container {
+    
+    height: 100vmin;
+    width: 100vmin;
+    margin: 0 auto;
+    /*background-color: beige;*/
+}
+
+#arena-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    perspective: 75vmin;
+    left: 0vmin;
+    top: -10vmin;
+    margin: 0 auto;
+    border-left: -5vmin solid transparent;
+    perspective-origin: bottom;
+    transform-style: preserve-3d;
+    /*border: 1px solid silver;*/
+    box-sizing: border-box;
+    overflow: visible;
+    transform-origin: 0% 0%;
+}
+
+.ui-lives{
+    position: absolute;
+    text-align: center;
+    font-size: 8vmin;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 1;
+    transform: rotateX(50deg) translateZ(5vmin);
+    opacity: 1;
+}
+.ui-lives-0 {
+    color: orange;
+    top: 75vmin;
+    vertical-align: text-bottom;
+    transform: rotateX(-30deg)  translateZ(12vmin);
+    opacity: 0.5;
+}
+.ui-lives-1 {
+    color: red;
+    left: 80vmin;
+    right: unset;
+    top: 30vmin;
+    transform: rotateX(-80deg) rotateY(-90deg) translateZ(-10vmin);
+}
+.ui-lives-2 {
+    color: blueviolet;
+    top: -25vmin;
+    transform: rotateX(-80deg)  translateZ(10vmin);
+
+}
+.ui-lives-3 {
+    color: blue;
+    left: unset;
+    right: 80vmin;
+    top: 30vmin;
+    transform: rotateX(-80deg) rotateY(90deg) translateZ(-10vmin);
+}
+
+#arena {
+    position: relative;
+    background-color: rgb(56, 51, 51);
+    background-image: url("https://www.transparenttextures.com/patterns/diamond-upholstery.png");
+    background-position: 50% 50%;
+    background-size: 20%;
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    width: 90%;
+    height: 90%;
+    margin: 5%;
+    transform-style: preserve-3d;
+    transform: rotateX(25deg);/* rotateY(10deg);*/
+    border-radius: 9999px;
+    border: 2vmin groove #e0e0e0;
+    border-left-style: ridge;
+    border-top-style: ridge;
+    box-sizing: border-box;
+    
+    
+}
+
+#arena-deco1, #arena-deco2  {
+    position: absolute;
+    border-radius: 50%;
+    width: 100vmin;
+    height: 100vmin;
+    left: 50%;
+    top: 50%;
+    box-sizing: border-box;
+    border: 5vmin ridge slateblue;
+    transform: translate(-50%, -50%) translateZ(-3vmin);
+    transform-origin: 0% 0%;
+    opacity: 1;
+    border-left-style: groove;
+    border-top-style: groove;
+}
+
+#arena-deco2 {
+    position: absolute;
+    border-radius: 50%;
+    width: 100vmin;
+    height: 100vmin;
+    left: 50%;
+    top: 50%;
+    box-sizing: border-box;
+    transform: translate(-50%, -50%) translateZ(-30vmin);
+    opacity: 0.3;
+}
+
+
+
+.ball {
+    position: absolute;
+    background: linear-gradient();
+    width: 4%;
+    height: 4%;
+    border-radius: 50%;
+    /*border: 0.75vmin solid silver;*/
+    border: .75vmin groove #e0e0e0;
+    border-left-style: ridge;
+    border-top-style: ridge;
+    /*box-sizing: border-box;*/
+    top: 50%;
+    left: 50%;
+    transform: rotateX(-25deg) translate(-50%, -50%) translateZ(0.0vw);
+    overflow: visible;
+}
+
+.ball {
+    background: rgb(218,230,228);
+    background: rgb(11,31,61);
+    position: absolute;
+    background-color: black;
+    width: 4%;
+    height: 4%;
+    border-radius: 9999px;
+    border: 0.75vmin solid silver;
+    border: 1vmin ridge #e0e0e0;
+    border-left-style: groove;
+    border-top-style: groove;
+    top: 50%;
+    left: 50%;
+    transform: rotateX(-25deg) translate(-50%, -50%) translateZ(0.0vw);
+    overflow: visible;
+}
+
+.ball-trail {
+    position: absolute;
+    width: 0; 
+    height: 0;
+    z-index: -1;
+    border-top: 1.5vmin solid transparent;
+    border-bottom: 1.5vmin solid transparent;
+    border-right: 2vmin solid green;
+    top: 50%;
+    left: 50%;
+    transform: rotateX(-25deg) rotate(0deg) translate(-50%, 0%) translateZ(-1.0vmin);;
+}
+
+.ball-shadow {
+    background-color: black;
+    width: 10vmin;
+    height: 10vmin;
+    /*border-radius: 9999px;*/
+    z-index: -1;
+    border: 0.75vmin solid silver;
+    top: 50%;
+    left: 50%;
+    transform: rotateX(25deg);
+}
+
+.paddle, .paddle2, .paddle3, .paddle4 {
+    position: absolute;
+    transform-origin: 0% 0%;
+    background-color: transparent;
+    width: 12%;
+    height: 5%;
+    border-radius: 50%;
+    border: 2vmin ridge blue;
+    border-left: 2vmin solid transparent;
+    border-right: 2vmin solid transparent;
+    border-bottom: 2vmin solid transparent;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateZ(0vmin);
+    overflow: visible;
+    /*box-shadow: 0px -1.5vmin 5vmin rgba(99, 75, 75, 0.5);*/
+}
+
+.goalpost {
+    position: absolute;
+    transform-origin: 0% 0%;
+    background-color: slategrey;
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+    border: 2vmin groove slateblue;
+    border-left-style: ridge;
+    border-top-style: ridge;
+    box-sizing: border-box;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateZ(0vmin);
+    overflow: visible;
+    /*box-shadow: 0px -1.5vmin 5vmin rgba(99, 75, 75, 0.5);*/
+}
+
+.bottomleftpost  { left: 14%; top: 86%; }
+.bottomrightpost { left: 86%; top: 86%; }
+.topleftpost     { left: 14%; top: 14%; }
+.toprightpost    { left: 86%; top: 14%; }
+
+.zheight1 {
+    transform: translate(-50%, -50%) translateZ(1.5vmin);
+}
+
+.zheight2 {
+    transform: translate(-50%, -50%) translateZ(3vmin);
+}
+
+.paddlee::before {
+    content: ' ';
+    width: 5vmin;
+    height: 5vmin;
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    background-color: cyan;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: rotateX(25deg) translate(-50%, -50%) translateZ(-2vmin);
+    box-shadow: 0px 2vmin 2vmin cyan;
+}
+
+.aaball {
+    content: '';
+     display: inline-block;
+    position: absolute;
+    background-color: red;
+    width: 100%;
+    height: 100%;
+    transform-style: unset;
+    border-radius: 9999px;
+    z-index: -2;
+    bottom: 0;
+    transform: rotateX(25deg) translateZ(-150%);
+}
+
+
+/*
+
+    box-shadow: 0 0 0px silver,
+    0 2px 0px silver,
+    0 4px 0px silver,
+    0 6px 0px silver,
+    0 8px 0px silver,
+    0 10px 0px silver;
+

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./arc.css">
+    <title>Document</title>
+    
+</head>
+<body>
+    
+    <div id="arena-outer-container">
+        <div id="debug-log">Debug</div>
+        <div id="debug-log2">Debug2</div>
+        
+        <div id="arena-container">
+            
+            <div id="arena">
+                <div id="arena-deco1"></div>
+                <div id="arena-deco2"></div>
+                <div class="ui-lives ui-lives-0">0</div>
+                <div class="ui-lives ui-lives-1">0</div>
+                <div class="ui-lives ui-lives-2">0</div>
+                <div class="ui-lives ui-lives-3">0</div>
+                <!-- 
+                <div class="ball">
+                    <div class="ball-trail"></div>
+                    <div class="ball-draw"></div>
+                </div>
+
+                
+                <div class="paddle2"></div>
+                <div class="paddle3"></div>
+                <div class="paddle4"></div>
+                -->
+                <div class="goalpost bottomleftpost zheight1"></div>
+                <div class="goalpost bottomrightpost zheight1"></div>
+                <div class="goalpost topleftpost zheight1"></div>
+                <div class="goalpost toprightpost zheight1"></div>
+
+                <div class="goalpost bottomleftpost"></div>
+                <div class="goalpost bottomrightpost"></div>
+                <div class="goalpost topleftpost"></div>
+                <div class="goalpost toprightpost"></div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="splash-screen" id="splash-title">
+        <h1>ArcBall</h1>
+        <button id="splash-btn-title-play">Play</button>
+        <button id="splash-btn-title-instructions">Instructions</button>
+    </div>
+    <div class="splash-screen" id="splash-howtoplay">
+        <h1>How To Play</h1>
+        
+        <p>
+            <img src="buttons-freepikdotcom.png" width="20%">
+            <br>
+            Press Left and Right Arrow Key to Move Paddle
+            Score in the opponents' goals to subtract their Score
+            Players are eliminated when their score falls to zero
+            The last player standing wins
+            <br>
+            <button id="splash-btn-howtoplay-play">Play</button>
+        </p>
+    </div>
+    <div class="splash-screen" id="splash-win">
+        <h1>You Win!</h1>
+        <button id="splash-btn-win-playagain">Play Again</button>
+    </div>
+    <div class="splash-screen" id="splash-lose">
+        <h1>Game Over</h1>
+        <button id="splash-btn-lose-playagain">Play Again</button>
+    </div>
+    <script type="module" src='./arc.js'></script>
+    <script type="module" src='./Ball.js'></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</body>
+
+
+</html>
