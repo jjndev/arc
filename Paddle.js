@@ -83,7 +83,7 @@ export class Paddle extends ArenaObject {
         this.docElementArray.forEach( (element, index) => {
             //console.log(`${element.style.left} | ${element.style.top}`)
             //element.style.rotate = `${ - this.startAngle - this.angle}deg`;
-            element.style.transform = `rotateZ(${-this.angle - this.startAngle}deg) translate(-50%, -50%) translateZ(${index*0.5}vmin)`;
+            element.style.transform = `rotateZ(${-this.angle - this.startAngle}deg) translate(-50%, -50%) translateZ(${index*0.5 + 1}vmin)`;
         });
     }
 
